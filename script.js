@@ -1,8 +1,10 @@
-// JavaScript to handle the animation and display of content
 window.addEventListener('load', function() {
-    // After the circle expands, display the content
+    // Get the content element
     const content = document.querySelector('.content');
+
+    // Wait for the circle animation to complete (3 seconds)
     setTimeout(() => {
+        // Display the content after 3 seconds
         content.style.display = 'block';
-    }, 3000); // Wait 3 seconds (duration of the circle expansion)
+    }, 3000); // Wait for the duration of the circle animation
 });
