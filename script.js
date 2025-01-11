@@ -1,10 +1,8 @@
-document.addEventListener("DOMContentLoaded", function() {
-    const circle = document.getElementById("circle");
-    const content = document.getElementById("content");
-
-    // Once the circle animation ends, show the content with fade-in
-    circle.addEventListener("animationend", function() {
-        content.classList.remove("hidden");
-        content.classList.add("show");
-    });
+// JavaScript to handle the animation and display of content
+window.addEventListener('load', function() {
+    // After the circle expands, display the content
+    const content = document.querySelector('.content');
+    setTimeout(() => {
+        content.style.display = 'block';
+    }, 3000); // Wait 3 seconds (duration of the circle expansion)
 });
