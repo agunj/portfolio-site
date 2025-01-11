@@ -1,64 +1,27 @@
-/* Set the initial state of the webpage */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f4f4f4;
 }
 
-body, html {
-    height: 100%;
-    background-color: black;
-    color: white;
-    font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    position: relative; /* Ensure absolute elements inside align properly */
-}
-
-/* Circle: initially invisible */
-.circle {
-    position: absolute;
-    width: 0;
-    height: 0;
-    background-color: white;
-    border-radius: 50%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    animation: expand 3s cubic-bezier(0.68, 0, 0.27, 1) forwards;
-}
-
-/* Content style */
 .content {
-    display: none; /* Initially hide content */
-    text-align: center;
-    z-index: 1;
-    opacity: 0;
-    animation: fadeIn 1s ease-in 3s forwards; /* Wait for the circle to expand */
+  opacity: 0;
+  transition: opacity 2s ease-in-out;
 }
 
 h1 {
-    font-size: 3em;
-    margin-bottom: 20px;
+  font-size: 2rem;
 }
 
 p {
-    font-size: 1.5em;
+  font-size: 1rem;
 }
 
-/* Circle expansion animation */
-@keyframes expand {
-    to {
-        width: 100vw;
-        height: 100vh;
-    }
-}
-
-/* Fade in content after the circle animation */
-@keyframes fadeIn {
-    to {
-        opacity: 1;
-    }
+body.loaded .content {
+  opacity: 1;
 }
