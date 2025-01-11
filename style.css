@@ -1,52 +1,62 @@
-/* Basic styling for body and content */
-body {
+/* Set the initial state of the webpage */
+* {
     margin: 0;
-    overflow: hidden;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    background-color: black;
+    color: white;
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    position: relative;
+    overflow: hidden;
 }
 
-/* The animated expanding circle */
-#circle {
+.circle {
     position: absolute;
-    width: 50px;
-    height: 50px;
-    background-color: #3498db;
+    width: 0;
+    height: 0;
+    background-color: white;
     border-radius: 50%;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    animation: expand 2s forwards;
+    animation: expand 3s cubic-bezier(0.68, 0, 0.27, 1) forwards;
 }
 
-/* Main content - initially hidden */
-#content {
+/* Content style */
+.content {
+    display: none;
+    text-align: center;
+    z-index: 1;
     opacity: 0;
-    transition: opacity 2s ease-in;
+    animation: fadeIn 1s ease-in 3s forwards;
 }
 
-#content.hidden {
-    opacity: 0;
+h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
 }
 
-/* Keyframe for circle expansion */
+p {
+    font-size: 1.5em;
+}
+
+/* Circle animation: expand */
 @keyframes expand {
-    0% {
-        width: 50px;
-        height: 50px;
-    }
-    100% {
+    to {
         width: 100vw;
         height: 100vh;
     }
 }
 
-/* Faded effect on content after animation */
-#content.show {
-    opacity: 1;
+/* Content fade-in */
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
 }
