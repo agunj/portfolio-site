@@ -14,8 +14,10 @@ body, html {
     justify-content: center;
     align-items: center;
     overflow: hidden;
+    position: relative; /* Ensure absolute elements inside align properly */
 }
 
+/* Circle: initially invisible */
 .circle {
     position: absolute;
     width: 0;
@@ -30,11 +32,11 @@ body, html {
 
 /* Content style */
 .content {
-    display: none;
+    display: none; /* Initially hide content */
     text-align: center;
     z-index: 1;
     opacity: 0;
-    animation: fadeIn 1s ease-in 3s forwards;
+    animation: fadeIn 1s ease-in 3s forwards; /* Wait for the circle to expand */
 }
 
 h1 {
@@ -46,7 +48,7 @@ p {
     font-size: 1.5em;
 }
 
-/* Circle animation: expand */
+/* Circle expansion animation */
 @keyframes expand {
     to {
         width: 100vw;
@@ -54,7 +56,7 @@ p {
     }
 }
 
-/* Content fade-in */
+/* Fade in content after the circle animation */
 @keyframes fadeIn {
     to {
         opacity: 1;
