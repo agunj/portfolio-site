@@ -48,10 +48,11 @@
         <div class="card">
             <h3>Color Detection Project</h3>
             <p>I developed a Python project for real-time color detection system for individuals with Color Vision Deficiency (Color Blindness), 
-              using hand tracking and color correction techniques to accommodate abnormal lighting. OpenCV handled the video capture and color adjustments, 
-              while MediaPipe (a machine learning algorithm) detected hand gestures for user interaction, allowing the user 
-              to point at an object and be shown its color. The system calculates 
-              the correct color based on a scanned card (similar to White Cards in photography), and searches my generated SQL database 
+              using hand tracking and color correction techniques to accommodate abnormal lighting. PyTorch and OpenCV together handled the detection of a color-localization-card. 
+                The card is based off of White Cards in photography, but instead is used automatically by the program to figure out how 
+                the image should look under ideal lighting conditions through OpenCV. Meanwhile, MediaPipe (a machine learning algorithm) detects hand gestures for user interaction, allowing the user 
+              to point at an object and be shown its color. Once the system localizes colors, identifies what the use is pointing at, and acquires the localized color value of the object, it 
+                searches a generated SQLite database 
               for the most accurate color estimate.
               </p>
             <p>The project can be found <a href="https://github.com/agunj/ColorDetectionModel">here</a>
