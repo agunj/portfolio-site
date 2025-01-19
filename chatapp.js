@@ -1,4 +1,4 @@
-import { HfInference } from "https://cdn.jsdelivr.net/npm/@huggingface/inference@2.0.4/+esm";
+import { HfInference } from "node_modules/@huggingface/inference";
 
 // Replace with your HuggingFace token
 const client = new HfInference("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");
